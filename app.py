@@ -2,7 +2,7 @@ from flask import Flask,render_template,request
 import joblib
 import pandas as pd
 
-app=Flask(_name_)
+app=Flask(__name__)
 
 model=joblib.load("airbnb.pkl")
 
@@ -29,5 +29,5 @@ def home():
     else:
         return render_template("index.html")
 
-if _name=="main_":
+if __name__=="__main__":
     app.run()
